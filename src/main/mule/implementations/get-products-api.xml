@@ -12,7 +12,7 @@ output application/json
 ---
 {
   productId: "121",
-  productName: "ABC",
+  productName: "ABC-GIT",
   productProvider: "Udemy",
   productDescription: "This is a test Product"
 }]]></ee:set-payload>
