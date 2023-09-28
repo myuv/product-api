@@ -95,7 +95,9 @@
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
 						<muleVersion>4.4.0</muleVersion>
-						<server>my.anypoint.credentials</server>
+					<!-- <server>my.anypoint.credentials</server>  -->
+						<username>muleyuv</username>
+						<password>Mule@1234</password>
 						<objectStoreV2>true</objectStoreV2>
 						<properties>						    
 							<anypoint.platform.base_uri>https://anypoint.mulesoft.com</anypoint.platform.base_uri>
