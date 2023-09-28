@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:api-gateway="http://www.mulesoft.org/schema/mule/api-gateway" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/mule/api-gateway/current/mule-api-gateway.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="37c65fb3-6cad-452e-a88e-9fe12626eb25" >
+		<http:listener-connection host="0.0.0.0" port="${http.port}" />
+	</http:listener-config>
+	<configuration-properties doc:name="Configuration properties" doc:id="7d2246ae-8f25-4c0c-a414-79f5418f1afa" file="${env}-mule-api-demo.yaml" />
+	<api-gateway:autodiscovery apiId="${api.id}" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="b8ba1a68-4ca1-4d0b-8ba3-f8af3446e411" flowRef="mule-api-demoFlow" />
+	<flow name="mule-api-demoFlow" doc:id="427b8278-8a73-4768-9b45-570b3645df17" >
+		<http:listener doc:name="Listener" doc:id="0f6185a7-d2cd-4b14-825c-8be9cc10a4ae" config-ref="HTTP_Listener_config" path="/test"/>
+		<set-payload value="'Welcome to Mule'" doc:name="Set Payload" doc:id="95d3fc6a-a5c6-4b1c-bf8d-b82d17f78dae" />
+	</flow>
+</mule>
